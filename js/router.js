@@ -1,4 +1,3 @@
-
 const $main = $('main');
 const routes = {};
 
@@ -22,7 +21,7 @@ function render() {
 	const component = routes[path];
 	const $view = component.render();
 	$main.empty().append($view);
-	document.title = "Todo App - " + component.getTitle();
+	document.title = "SPA - " + component.getTitle();
 }
 $(window).on('hashchange', render);
 
