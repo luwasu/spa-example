@@ -17,6 +17,8 @@ export default {
     }
 };
 
+const quoteElement = '[data-action=quote]';
+
 function getQuote() {
     let QUOTE_URL = 'https://locher.ti.bfh.ch/services/quote?JSON';
     return $.ajax({
@@ -26,11 +28,11 @@ function getQuote() {
             'accept': 'application/json'
         }
     })
-        .then(data => $('[data-action=quote]').text(data.quote + ' -' + data.author))
+        .then(data => $(quoteElement).text(data.quote + ' -' + data.author))
         .then(data => console.log(' GET request successful'))
         .catch(err => {
-            $('[data-action=quote]').text('Sorry looks like something went wrong🥴. Please try again...');
-            console.log('Error Code: ' + JSON.stringify(err.status + ' Text: '+err.responseText))
+            $(quoteElement).text('Sorry looks like something went wrong🥴. Please try again...');
+            console.log('Error Code: ' + err.status + ' Text: '+err.responseText);
         });
 }
 

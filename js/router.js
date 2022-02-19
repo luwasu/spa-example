@@ -13,6 +13,8 @@ export default {
 		}
 	}
 };
+
+
 function render() {
 	const path = location.hash.replace('#', '');
 	if (!routes[path]) {
