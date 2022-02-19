@@ -29,7 +29,7 @@ function getJoke() {
         .then(data => $('[data-action=joke]').text(data.value))
         .then(data => console.log('GET request successful'))
         .catch(err => {
-            $('#joke').text('Sorry looks like something went wrong🥴. Please try again...');
+            $('[data-action=joke]').text('Sorry looks like something went wrong🥴. Please try again...');
             console.log('Error Code: ' + err.status + ' ' + JSON.parse(err.responseText).message)
         });
 }

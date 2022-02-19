@@ -27,10 +27,10 @@ function getQuote() {
         }
     })
         .then(data => $('[data-action=quote]').text(data.quote + ' -' + data.author))
-        .then(data => console.log('GET request successful'))
+        .then(data => console.log(' GET request successful'))
         .catch(err => {
-            $('#joke').text('Sorry looks like something went wrong🥴. Please try again...');
-            console.log('Error Code: ' + err.status + ' ' + JSON.parse(err.responseText).message)
+            $('[data-action=quote]').text('Sorry looks like something went wrong🥴. Please try again...');
+            console.log('Error Code: ' + JSON.stringify(err.status + ' Text: '+err.responseText))
         });
 }
 
