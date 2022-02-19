@@ -20,7 +20,7 @@ export default {
 
 
 const authHeader = 'Basic ' + btoa('Alice:Bob97')
-const BASE_URL_ = 'https://locher.ti.bfh.ch/todo/api/';
+const BASE_URL = 'https://locher.ti.bfh.ch/todo/api/';
 
 function getTodos() {
     return $.ajax({
